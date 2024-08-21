@@ -234,7 +234,7 @@ while cur < len(lines):
 	if '<br>' in m.content:
 		m.content = m.content.replace('<br>', '\\n')
 
-	print(m.content)
+	# print(m.content)
 
 	# Remove HTML formatting tags
 	if '<' in m.content and any(f'<{tag}>' in m.content for tag in html_tags):
@@ -270,3 +270,4 @@ with open(output_file, 'w+', encoding='UTF-8', newline='') as f:
 	writer.writerows([m.toTuple() for m in messages])
 
 print(f'Written to \'{output_file}\' in {(time()-t0):.2f}s.')
+
